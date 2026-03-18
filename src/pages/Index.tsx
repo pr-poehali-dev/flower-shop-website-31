@@ -57,8 +57,8 @@ function Navbar({ cartCount, onCartOpen, activeSection, onNav }: {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-3 glass shadow-lg shadow-rose-100/50" : "py-5 bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <button onClick={() => onNav("hero")} className="flex items-center gap-2">
-          <span className="text-3xl font-display font-bold tracking-tight" style={{ color: "var(--brand-rose)" }}>FLORA</span>
-          <span className="text-lg">🌸</span>
+          <img src="https://cdn.poehali.dev/projects/b2986cc1-1d07-475c-98c5-02810cc538bc/bucket/8401e138-a120-4ec3-bf44-44cef6666120.jpg" alt="ЦветЁж" className="h-10 w-10 object-contain" />
+          <span className="text-2xl font-display font-bold tracking-tight" style={{ color: "var(--brand-rose)" }}>ЦветЁж</span>
         </button>
 
         <div className="hidden md:flex items-center gap-8">
@@ -114,12 +114,12 @@ function Hero({ onNav }: { onNav: (s: string) => void }) {
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "var(--brand-cream)" }}>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full opacity-20 blur-3xl animate-float"
-          style={{ background: "radial-gradient(circle, #c94070, #e8607a)" }} />
-        <div className="absolute top-1/2 -left-24 w-72 h-72 rounded-full opacity-15 blur-3xl animate-float-slow"
-          style={{ background: "radial-gradient(circle, #6a8f4e, #8ab560)" }} />
+        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full opacity-25 blur-3xl animate-float"
+          style={{ background: "radial-gradient(circle, #1a4fa0, #2d6dd4)" }} />
+        <div className="absolute top-1/2 -left-24 w-72 h-72 rounded-full opacity-20 blur-3xl animate-float-slow"
+          style={{ background: "radial-gradient(circle, #e8607a, #f4a7b9)" }} />
         <div className="absolute bottom-20 right-1/4 w-56 h-56 rounded-full opacity-20 blur-3xl animate-float"
-          style={{ background: "radial-gradient(circle, #e8b84b, #f5d87a)", animationDelay: "3s" }} />
+          style={{ background: "radial-gradient(circle, #1a4fa0, #6fa3ef)", animationDelay: "3s" }} />
         <div className="absolute top-24 right-12 text-7xl animate-float opacity-60" style={{ animationDelay: "1s" }}>🌸</div>
         <div className="absolute bottom-32 left-8 text-5xl animate-float-slow opacity-50">🌺</div>
         <div className="absolute top-1/3 right-1/4 text-4xl animate-float opacity-40" style={{ animationDelay: "2s" }}>🌼</div>
@@ -129,7 +129,7 @@ function Hero({ onNav }: { onNav: (s: string) => void }) {
       <div className="max-w-7xl mx-auto px-6 pt-24 pb-16 grid md:grid-cols-2 gap-12 items-center relative z-10">
         <div>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-body font-medium mb-6 animate-fade-in-up"
-            style={{ background: "rgba(201,64,112,0.1)", color: "var(--brand-rose)" }}>
+            style={{ background: "rgba(26,79,160,0.1)", color: "var(--brand-rose)" }}>
             <span className="w-2 h-2 rounded-full animate-pulse-ring" style={{ background: "var(--brand-rose)" }} />
             Доставка за 60 минут
           </div>
@@ -144,7 +144,7 @@ function Hero({ onNav }: { onNav: (s: string) => void }) {
           <div className="flex flex-wrap gap-4 animate-fade-in-up delay-300">
             <button onClick={() => onNav("catalog")}
               className="flex items-center gap-2 px-8 py-4 rounded-full font-body font-semibold text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-rose-200"
-              style={{ background: "linear-gradient(135deg, var(--brand-rose), #e8607a)" }}>
+              style={{ background: "linear-gradient(135deg, var(--brand-rose), #2d6dd4)" }}>
               <Icon name="Flower2" size={18} />
               Выбрать букет
             </button>
@@ -197,12 +197,12 @@ function Hero({ onNav }: { onNav: (s: string) => void }) {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 overflow-hidden py-3 border-t border-rose-100"
-        style={{ background: "rgba(201,64,112,0.05)" }}>
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden py-3 border-t border-blue-100"
+        style={{ background: "rgba(26,79,160,0.05)" }}>
         <div className="flex animate-marquee whitespace-nowrap">
           {Array(8).fill(null).map((_, i) => (
-            <span key={i} className="font-display text-sm font-medium text-rose-400 mx-6 italic">
-              Свежие цветы ✦ Ручная сборка ✦ Доставка за 60 мин ✦ Бесплатно от 3000 ₽ ✦
+            <span key={i} className="font-display text-sm font-medium mx-6 italic" style={{ color: "var(--brand-rose)" }}>
+              Свежие цветы ✦ Ручная сборка ✦ Доставка за 60 мин ✦ Бесплатно от 3000 ₽ ✦ ЦветЁж 🦔 ✦
             </span>
           ))}
         </div>
@@ -288,7 +288,7 @@ function Catalog({ onAddToCart }: { onAddToCart: (p: typeof PRODUCTS[0]) => void
                   <button
                     onClick={() => handleAdd(p)}
                     className="flex items-center gap-1.5 px-4 py-2 rounded-full font-body text-sm font-semibold transition-all duration-200 hover:scale-105 active:scale-95 text-white"
-                    style={{ background: added === p.id ? "var(--brand-green)" : "var(--brand-rose)" }}
+                    style={{ background: added === p.id ? "#3a9e5f" : "var(--brand-rose)" }}
                   >
                     {added === p.id ? (
                       <><Icon name="Check" size={14} /> Добавлено</>
@@ -500,7 +500,7 @@ function Contacts() {
               <button
                 type="submit"
                 className="w-full py-4 rounded-xl font-body font-semibold text-white transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-rose-200"
-                style={{ background: sent ? "var(--brand-green)" : "linear-gradient(135deg, var(--brand-rose), #e8607a)" }}
+                style={{ background: sent ? "#3a9e5f" : "linear-gradient(135deg, var(--brand-rose), #2d6dd4)" }}
               >
                 {sent ? "✓ Заявка отправлена!" : "Отправить заявку"}
               </button>
@@ -596,7 +596,7 @@ function CartDrawer({ items, onClose, onRemove, onUpdateQty }: {
               )}
               <button onClick={handleOrder}
                 className="w-full py-4 rounded-xl font-body font-semibold text-white transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-rose-200"
-                style={{ background: ordered ? "var(--brand-green)" : "linear-gradient(135deg, var(--brand-rose), #e8607a)" }}>
+                style={{ background: ordered ? "#3a9e5f" : "linear-gradient(135deg, var(--brand-rose), #2d6dd4)" }}>
                 {ordered ? "✓ Заказ оформлен!" : "Оформить заказ"}
               </button>
             </div>
@@ -614,8 +614,8 @@ function Footer({ onNav }: { onNav: (s: string) => void }) {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <span className="font-display text-2xl font-bold text-white">FLORA</span>
-            <span className="text-2xl">🌸</span>
+            <img src="https://cdn.poehali.dev/projects/b2986cc1-1d07-475c-98c5-02810cc538bc/bucket/8401e138-a120-4ec3-bf44-44cef6666120.jpg" alt="ЦветЁж" className="h-10 w-10 object-contain" />
+            <span className="font-display text-2xl font-bold text-white">ЦветЁж</span>
           </div>
           <div className="flex gap-6">
             {[
@@ -624,12 +624,12 @@ function Footer({ onNav }: { onNav: (s: string) => void }) {
               { id: "about", label: "О нас" },
               { id: "contacts", label: "Контакты" },
             ].map(l => (
-              <button key={l.id} onClick={() => onNav(l.id)} className="font-body text-sm text-stone-500 hover:text-rose-400 transition-colors">
+              <button key={l.id} onClick={() => onNav(l.id)} className="font-body text-sm text-stone-500 hover:text-blue-400 transition-colors">
                 {l.label}
               </button>
             ))}
           </div>
-          <div className="font-body text-sm text-stone-600">© 2025 FLORA. Все права защищены</div>
+          <div className="font-body text-sm text-stone-600">© 2025 ЦветЁж. Все права защищены</div>
         </div>
       </div>
     </footer>
